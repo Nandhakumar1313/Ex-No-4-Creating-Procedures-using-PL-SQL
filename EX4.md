@@ -1,6 +1,7 @@
 # Ex. No: 4 Creating Procedures using PL/SQL
 
-### AIM: To create a procedure using PL/SQL.
+### AIM:
+To create a procedure using PL/SQL.
 
 ### Steps:
 1. Create employee table with following attributes (empid NUMBER, empname VARCHAR(10), dept VARCHAR(10),salary NUMBER);
@@ -11,7 +12,37 @@
 6. Display the employee table
 
 ### Program:
+```sql
+SQL> create table employeee(empid number,empname varchar (20), dept varchar (10) ,salary number);
+
+Table created.
+
+SQL> create or replace procedure insert_employeee_data AS
+  2  begin
+  3  insert into employeee (empid,empname,dept,salary)
+  4  values (1,'john','HR',50000);
+  5  insert into employeee (empid,empname,dept,salary)
+  6  values (2,'joe','IT',60000);
+  7  insert into employeee (empid,empname,dept,salary)
+  8  values (3,'bob','Finance',55000);
+  9  commit;
+ 10  end;
+ 11  /
+
+Procedure created.
+
+SQL> begin
+  2  insert_employeee_data;
+  3  end;
+  4  /
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from employeee;
+```
 
 ### Output:
+![271272260-ce3c4b3a-e9ae-49b2-ad7b-565bdcc4c9bc](https://github.com/Nandhakumar1313/Ex-No-4-Creating-Procedures-using-PL-SQL/assets/120230694/d355feab-bdee-495f-ab77-fcfe3a8c650e)
 
 ### Result:
+Hence the procedure using pl/sql is created successfully.
